@@ -1,4 +1,4 @@
-{% set version = "3.2" %}
+{% set version = "4.1.0" %}
 
 package:
   name: pexpect
@@ -6,20 +6,22 @@ package:
 
 source:
   fn: pexpect-{{ version }}.tar.gz
-  url: https://pypi.python.org/packages/source/p/pexpect/pexpect-{{ version }}.tar.gz
-  md5: 3f316a668b03a567387e76e05e20d8a5
+  url: https://pypi.io/packages/source/p/pexpect/pexpect-{{ version }}.tar.gz
+  md5: 562a1a21f2a60b36dfd5d906dbf0943e
+  patches:
+      # See https://github.com/pexpect/pexpect/issues/290
+      - no_async.patch  # [py2k]
 
 build:
   number: 0
   script: python setup.py install
-  # We can't build on windows until v4.0.
-  skip: true  # [py3k or win]
 
 requirements:
   build:
     - python
   run:
     - python
+    - ptyprocess  # [not win]
 
 test:
   imports:
