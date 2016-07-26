@@ -1,4 +1,4 @@
-{% set version = "4.1.0" %}
+{% set version = "4.2.0" %}
 
 package:
   name: pexpect
@@ -7,7 +7,7 @@ package:
 source:
   fn: pexpect-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/p/pexpect/pexpect-{{ version }}.tar.gz
-  md5: 562a1a21f2a60b36dfd5d906dbf0943e
+  md5: 8071ec5df0f3d515daedafad672d1632
   patches:
       # See https://github.com/pexpect/pexpect/issues/290
       - no_async.patch  # [py2k]
