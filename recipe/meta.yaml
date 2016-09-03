@@ -1,4 +1,4 @@
-{% set version = "4.2.0" %}
+{% set version = "4.2.1" %}
 
 package:
   name: pexpect
@@ -6,11 +6,11 @@ package:
 
 source:
   fn: pexpect-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/p/pexpect/pexpect-{{ version }}.tar.gz
-  md5: 8071ec5df0f3d515daedafad672d1632
+  url: https://github.com/pexpect/pexpect/archive/{{ version }}.tar.gz
+  sha256: f3e36792185a7b8b332a38846daa81d7e389688b7b63b9066d39c7f31a266a51
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install
 
 requirements:
@@ -27,7 +27,7 @@ test:
 about:
   home: http://pexpect.sourceforge.net/
   license: ISC
-  summary: Pexpect makes Python a better tool for controlling other applications.
+  summary: 'Pexpect makes Python a better tool for controlling other applications.'
 
 extra:
   recipe-maintainers:
