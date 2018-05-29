@@ -1,4 +1,4 @@
-{% set version = "4.5.0" %}
+{% set version = "4.6.0" %}
 
 package:
   name: pexpect
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pexpect/pexpect-{{ version }}.tar.gz
-  sha256: 9f8eb3277716a01faafaba553d629d3d60a1a624c7cf45daa600d2148c30020c
+  sha256: 2a8e88259839571d1251d278476f3eec5db26deb73a70be5ed5dc5435e418aba
 
 build:
   number: 0
