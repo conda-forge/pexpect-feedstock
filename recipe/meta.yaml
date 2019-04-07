@@ -10,7 +10,7 @@ source:
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   build:
@@ -18,7 +18,7 @@ requirements:
     - pip
   run:
     - python
-    - ptyprocess  # [not win]
+    - ptyprocess >=0.5  # [not win]
 
 test:
   imports:
