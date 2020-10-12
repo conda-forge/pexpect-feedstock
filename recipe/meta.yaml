@@ -9,8 +9,9 @@ source:
   sha256: fc65a43959d153d0114afe13997d439c22823a27cefceb5ff35c2178c6784c0c
 
 build:
-  number: 1
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  number: 2
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -18,11 +19,15 @@ requirements:
     - pip
   run:
     - python
-    - ptyprocess >=0.5  # [not win]
+    - ptyprocess >=0.5
 
 test:
   imports:
     - pexpect
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: http://pexpect.sourceforge.net/
