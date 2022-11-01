@@ -30,10 +30,11 @@ test:
     - pip
 
 about:
-  home: http://pexpect.sourceforge.net/
+  home: https://pexpect.readthedocs.io/
+  summary: Pexpect allows easy control of interactive console applications.
   license: ISC
   license_file: LICENSE
-  summary: 'Pexpect makes Python a better tool for controlling other applications.'
+  dev_url: https://github.com/pexpect/pexpect
 
 extra:
   recipe-maintainers:
