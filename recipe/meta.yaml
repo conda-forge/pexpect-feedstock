@@ -1,24 +1,25 @@
-{% set version = "4.8.0" %}
+{% set name = "pexpect" %}
+{% set version = "4.9.0" %}
 
 package:
-  name: pexpect
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/pexpect/pexpect-{{ version }}.tar.gz
-  sha256: fc65a43959d153d0114afe13997d439c22823a27cefceb5ff35c2178c6784c0c
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pexpect-{{ version }}.tar.gz
+  sha256: ee7d41123f3c9911050ea2c2dac107568dc43b2d3b0c7557a33212c398ead30f
 
 build:
-  number: 2
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
-  build:
-    - python
+  host:
+    - python >=3.7
     - pip
   run:
-    - python
+    - python >=3.7
     - ptyprocess >=0.5
 
 test:
